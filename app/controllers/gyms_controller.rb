@@ -1,6 +1,6 @@
 class GymsController < ApplicationController
   before_action :set_gym, only: [:show, :edit, :update, :destroy]
-  before_filter :authorize
+
   # GET /gyms
   # GET /gyms.json
   def index
