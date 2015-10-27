@@ -1,7 +1,7 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+@import "./application.scss";
 
 .container {
 	text-align: center;
@@ -13,4 +13,41 @@
 
 td {
 	text-align: center;
+}
+
+.list-of-gyms {
+	height: 100px;
+	width: 150px;
+	margin: 0 auto;
+	vertical-align: center;
+	background-color: $color5;
+	color: $color2;
+	border-radius: 10px;
+	display:block;
+}
+
+.gym-text {
+	position: relative;
+	top: 37px;
+}
+
+.schedule {
+	height: 100px;
+	width: 150px;
+	margin: 0 auto;
+	vertical-align: center;
+	background-color: $color5;
+	color: $color2;
+	border-radius: 10px;
+	display:block;
+}
+
+.schedule-text {
+	position: relative;
+	top: 30px;
+	font-size: 1.4em;
+}
+
+.user-button:hover {
+	text-decoration: none;
 }

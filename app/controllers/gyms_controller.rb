@@ -10,6 +10,7 @@ class GymsController < ApplicationController
   # GET /gyms/1
   # GET /gyms/1.json
   def show
+    @gym_schedules = @gym.schedules
   end
 
   # GET /gyms/new
