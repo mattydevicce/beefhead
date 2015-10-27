@@ -2,8 +2,11 @@
 	<p id="notice"><%= notice %></p>
 
 	<h1><%= @gym.name %></h1>
-
-	<%= @gym_schedules %>
+	<ul>
+		<% @gym_schedules.each do |gym| %>
+			<li><%= gym %></li>
+		<% end %>
+	</ul>
 
 	<%= link_to 'Edit', edit_gym_path(@gym) %> |
 	<%= link_to 'Back', gyms_path %>

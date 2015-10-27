@@ -15,6 +15,7 @@ class SchedulesController < ApplicationController
   # GET /schedules/new
   def new
     @schedule = Schedule.new
+    @gyms = Gym.all
   end
 
   # GET /schedules/1/edit
@@ -69,6 +70,6 @@ class SchedulesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def schedule_params
-      params.require(:schedule).permit(:time, :gym_id)
+      params.require(:schedule).permit(:time, :date, :gym_id)
     end
 end

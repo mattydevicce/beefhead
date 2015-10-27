@@ -12,14 +12,18 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date_select :date, {discard_year: true} %>
+  </div>
+  <div class="field">
     <%= f.label :time %><br>
-    <%= f.datetime_select :time %>
+    <%= f.time_select :time, {minute_step: 15} %>
   </div>
   <div class="field">
     <%= f.label :gym_id %><br>
-    <%= f.text_field :gym_id %>
+    <%= f.select(:gym_id, options_for_select(@gyms.collect {|gym| [gym.name, gym.id]})) %>
   </div>
   <div class="actions">
-    <%= f.submit, :class => 'btn btn-large' %>
+    <%= f.submit class: 'btn btn-primary' %>
   </div>
 <% end %>

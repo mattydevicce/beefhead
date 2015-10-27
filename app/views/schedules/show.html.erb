@@ -1,16 +1,30 @@
 <div class="container">
 	<p id="notice"><%= notice %></p>
 
+	<br>
+	<br>
+
 	<p>
 	  <strong>Time:</strong>
-	  <%= @schedule.time %>
+
+	  <!-- Rails only saves the 00 time as 0 so need to add it -->
+	  <% if @schedule.time.min == 0 %>
+	  	<%= @schedule.time.hour %>:<%= @schedule.time.min %>0
+	  <% else %>
+	  	<%= @schedule.time.hour %>:<%= @schedule.time.min %>
+	  <% end %>
+	</p>
+
+	<p>
+	  <strong>Date:</strong>
+	  <%= @schedule.date %>
 	</p>
 
 	<p>
 	  <strong>Gym:</strong>
-	  <%= @schedule.gym %>
+	  <%= @schedule.gym.name %>
 	</p>
 
 	<%= link_to 'Edit', edit_schedule_path(@schedule) %> |
-	<%= link_to 'Back', schedules_path %>
+	<%= link_to 'Back', user_path(current_user) %>
 </div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151026191348) do
+ActiveRecord::Schema.define(version: 20151027195008) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,10 +30,11 @@ ActiveRecord::Schema.define(version: 20151026191348) do
   end
 
   create_table "schedules", force: :cascade do |t|
-    t.datetime "time"
     t.integer  "gym_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.time     "time"
+    t.date     "date"
   end
 
   add_index "schedules", ["gym_id"], name: "index_schedules_on_gym_id", using: :btree
