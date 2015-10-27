@@ -3,10 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-body {
+.container {
 	text-align: center;
 }
 
-.new-user-form .field .lab {
-	text-align: right;
+.thead {
+	text-align: center;
+}
+
+td {
+	text-align: center;
 }

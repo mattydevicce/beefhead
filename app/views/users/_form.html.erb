@@ -16,28 +16,23 @@
 
 
     <div class="field">
-      <div class="col-md-5 lab"><%= f.label :name %>:</div> 
-      <div class="col-md-3"><%= f.text_field :name %></div>
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
     </div>
-    <br>
-    <br>
     <div class="field">
-       <div class="col-md-5 lab"><%= f.label :email %>:</div>
-       <div class="col-md-3"><%= f.text_field :email %></div>
+       <%= f.label :email %><br>
+       <%= f.text_field :email %>
     </div>
-    <br><br>
     <div class="field">
-      <div class="col-md-5 lab"><%= f.label :password %>:</div> 
-      <div class="col-md-3"><%= f.password_field :password %></div>
+      <%= f.label :password %><br>
+      <%= f.password_field :password %>
     </div>
-    <br><br>
     <div class="field">
-      <div class="col-md-5 lab"><%= f.label :password_confirmation %>:</div>
-      <div class="col-md-3"><%= f.password_field :password_confirmation %></div>
+      <%= f.label :password_confirmation %><br>
+      <%= f.password_field :password_confirmation %>
     </div>
-    <br><br>
     <div class="actions">
-      <%= f.submit %>
+      <%= f.submit class: 'btn btn-large btn-primary' %>
     </div>
   <% end %>
 </div>

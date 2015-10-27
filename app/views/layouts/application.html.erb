@@ -7,11 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% if current_user %>
-  Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
+<div class="login"><% if current_user %>
+  <span><span class="nav-link">Signed in as <%= current_user.name %></span> | <%= link_to "Logout", '/logout', :class => 'nav-link'%></span>
 <% else %>
-  <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/users/new' %>
-<% end %>
+  <span><%= link_to 'Login', '/login', :class => 'nav-link' %> | <%= link_to 'Signup', '/users/new', :class => 'nav-link' %></span>
+<% end %></div>
+<br>
+<br>
 <%= yield %>
 
 </body>

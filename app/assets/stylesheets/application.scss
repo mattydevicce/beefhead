@@ -16,3 +16,33 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+$color1: #193F8A ;
+$color2: #A7DBD8;
+$color3: #E0E4CC;
+$color4: #F38630;
+$color5: #FA6900;
+
+body {
+	background-color: $color3;
+}
+
+h1 {
+	color: $color1;
+}
+
+span {
+	color: $color4;
+}
+
+span .nav-link {
+	margin-left: 20px;
+	margin-right: 20px;
+	color: $color4;
+}
+
+.login {
+	float: right;
+	margin-top: 10px;
+	margin-right: 20px;
+}
