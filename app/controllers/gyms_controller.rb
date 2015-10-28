@@ -1,6 +1,11 @@
 class GymsController < ApplicationController
   before_action :set_gym, only: [:show, :edit, :update, :destroy]
 
+  def schedules
+    
+  end
+
+
   # GET /gyms
   # GET /gyms.json
   def index

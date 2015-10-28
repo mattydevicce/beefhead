@@ -13,7 +13,9 @@
   <%= f.hidden_field :user_id, :value => current_user.id %>
   
   <div class="field">
-  <%= f.radio_button : %>
+    <% @muscle_groups.each do |m| %>
+      <%= f.radio_button :muscle_groups, m.id, id: m.id%><%= f.label :muscle_groups, m.muscle, for: m.id %>
+    <% end %>
   </div>
 
   <div class="field">

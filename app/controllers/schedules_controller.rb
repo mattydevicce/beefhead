@@ -14,8 +14,10 @@ class SchedulesController < ApplicationController
 
   # GET /schedules/new
   def new
+
     @schedule = Schedule.new
     @gyms = Gym.all
+    @muscle_groups = MuscleGroup.all
   end
 
   # GET /schedules/1/edit
@@ -26,7 +28,8 @@ class SchedulesController < ApplicationController
   # POST /schedules.json
   def create
     @schedule = Schedule.new(schedule_params)
-
+    @muscle = MuscleGroup.find(params[:schedule][:muscle_groups])
+    @schedule.muscle_groups << @muscle
     respond_to do |format|
       if @schedule.save
         format.html { redirect_to @schedule, notice: 'Schedule was successfully created.' }
