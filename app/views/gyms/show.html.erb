@@ -3,39 +3,8 @@
 
 	<h1><%= @gym.name %></h1>
 	<br>
-	<div class="table-div">
-		<table class="table table hover">
-	    <thead>
-	      <tr>
-	        <th class="thead">Time</th>
-	        <th class="thead"># lifters</th>
-	      </tr>
-	    </thead>
 
-	    <tbody>
-	      <% 5.upto 11 do |value| %>
-	      	<tr><td><%= value %> am</td></tr>
-	      	<tr><td><%= value %>:30 am</td></tr>
-	      <% end %>
-	    	<tr><td>12 pm</td></tr>
-	    	<tr><td> 12:30 pm</td></tr>
-	      <% 1.upto 10 do |value| %>
-	      	<tr><td><%= value %> pm</td></tr>
-	      	<tr><td><%= value %>:30 pm</td></tr>
-	      <% end %>
-	      <tr><td>11 pm</td></tr>
-	    </tbody>
-	  </table>
-	</div>
+	<%= render 'schedule_table' %>
 
-
-
-	<ul>
-		<% @gym_schedules.each do |gym| %>
-			<li><%= gym %></li>
-		<% end %>
-	</ul>
-
-	<%= link_to 'Edit', edit_gym_path(@gym) %> |
 	<%= link_to 'Back', user_path(current_user.id) %>
 </div>

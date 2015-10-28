@@ -11,6 +11,8 @@ class GymsController < ApplicationController
   # GET /gyms/1.json
   def show
     @gym_schedules = @gym.schedules
+    today = Time.now.strftime("%Y-%m-%d")
+    @todays_schedule = @gym_schedules.select{ |day| day.date.to_s==today }
   end
 
   # GET /gyms/new
