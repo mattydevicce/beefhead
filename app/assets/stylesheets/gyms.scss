@@ -5,9 +5,13 @@
 .table-div {
 	height: 300px;
 	overflow: auto;
-	width: 600px;
+	width: 400px;
 	margin: 0 auto;
 	background-color: #DDDDDD;
 	border-radius: 20px;
 	font-size: 2em;
+}
+
+.gym-td {
+	border-bottom: 1px solid black;
 }

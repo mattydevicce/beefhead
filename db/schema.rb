@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151027201756) do
+ActiveRecord::Schema.define(version: 20151028183001) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,14 @@ ActiveRecord::Schema.define(version: 20151027201756) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "muscle_groups_schedules", id: false, force: :cascade do |t|
+    t.integer "schedule_id"
+    t.integer "muscle_group_id"
+  end
+
+  add_index "muscle_groups_schedules", ["muscle_group_id"], name: "index_muscle_groups_schedules_on_muscle_group_id", using: :btree
+  add_index "muscle_groups_schedules", ["schedule_id"], name: "index_muscle_groups_schedules_on_schedule_id", using: :btree
 
   create_table "schedules", force: :cascade do |t|
     t.integer  "gym_id"
