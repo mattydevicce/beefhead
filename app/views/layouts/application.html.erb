@@ -10,7 +10,7 @@
 <div class="login"><% if current_user %>
   <span><span class="nav-link">Signed in as <%= link_to current_user.name, user_path(current_user.id) %></span> | <%= link_to "Logout", '/logout', :class => 'nav-link'%></span>
 <% else %>
-  <span><%= link_to 'Login', '/login', :class => 'nav-link' %> | <%= link_to 'Signup', '/users/new', :class => 'nav-link' %></span>
+  <span><%= link_to 'Login', '/', :class => 'nav-link' %> | <%= link_to 'Signup', '/users/new', :class => 'nav-link' %></span>
 <% end %></div>
 <br>
 <br>

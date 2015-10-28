@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :users
   resources :gyms
 
-  get  '/login'  => 'sessions#new'
+  root  'sessions#new'
   post '/login'  => 'sessions#create'
   get  '/logout' => 'sessions#destroy'
 
