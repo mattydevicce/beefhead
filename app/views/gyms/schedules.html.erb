@@ -29,5 +29,30 @@
 </div>
 
 <script type="text/javascript">
-	$('.workout').addClass('yolo')
+	var greatest = 0;
+	var greatest_class = ''
+	var is_tied = [];
+	console.log("<%= @workouts['chest'] %>")
+	if ("<%= @workouts['chest'] %>" > greatest) {
+		greatest = "<%= @workouts['chest'] %>"
+		greatest_class = "chest"
+	}
+	if ("<%= @workouts['shoulders'] %>" > greatest) {
+		greatest_class = "shoulders"
+		greatest = "<%= @workouts['shoulders'] %>"
+	}
+	if ("<%= @workouts['back'] %>" > greatest) {
+		greatest_class = "back"
+		greatest = "<%= @workouts['back'] %>"
+	}
+	if ("<%= @workouts['legs'] %>" > greatest) {
+		greatest_class = "legs"
+		greatest = "<%= @workouts['legs'] %>"
+	}
+	if ("<%= @workouts['arms'] %>" > greatest) {
+		greatest_class = "arms"
+		greatest = "<%= @workouts['arms'] %>"
+	}
+	console.log(greatest_class)
+	$('.'+greatest_class).addClass('yolo')
 </script>
