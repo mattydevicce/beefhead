@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "./application.scss";
+
 .table-div {
 	height: 300px;
 	overflow: auto;
@@ -14,4 +16,28 @@
 
 .gym-td {
 	border-bottom: 1px solid black;
+}
+
+.workout {
+	height: 100px;
+	width: 40%;
+	background: $color2;
+	border: 1px solid black;
+	margin: 0 auto;
+	// margin-left: 200px;
+	text-align: center;
+}
+
+.workout>h4 {
+	position: relative;
+	top: 15px;
+}
+
+.workout-nodes {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.yolo {
+	background-color: red;
 }

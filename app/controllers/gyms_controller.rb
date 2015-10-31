@@ -3,7 +3,7 @@ class GymsController < ApplicationController
   before_action :set_gym, only: [:show, :edit, :update, :destroy]
 
   def schedules
-
+    @workouts = {'chest' => 0, 'shoulders' => 0, 'back' => 0, 'legs' => 0, 'arms' => 0}
     hour = params[:time].to_i - 5
     min = 0
     if params[:format] == 0.5
@@ -11,7 +11,11 @@ class GymsController < ApplicationController
     end
     time = Time.new(2000, 1, 1, hour, min, 0, +0)
     @todays_muscle_groups = Schedule.where({date: DateTime.now, time: Time.new(2000, 01, 01, hour, min)})
-    @todays_muscle_groups = @todays_muscle_groups
+    @todays_muscle_groups.each do |schedule|
+      schedule.muscle_groups.each do |muscle|
+        @workouts[muscle.muscle] += 1
+      end
+    end
   end
 
 

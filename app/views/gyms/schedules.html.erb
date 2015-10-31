@@ -1,7 +1,33 @@
 <div class="container">
 
 <h1>Workouts for the day</h1>
-<% @todays_muscle_groups.each do |muscle| %>
-	<%= muscle %>
-<% end %>
+<h3><%= @todays_muscle_groups.first.date %></h3>
+<br>
+<br>
+<div class="workout-nodes">
+<div class="workout chest col-lg-4 .col-xs-6 .col-sm-4">
+	<h4>Chest</h4>
+	<h4><%= @workouts['chest'] %></h4>
 </div>
+<div class="workout shoulders col-lg-4 .col-xs-6 .col-sm-4">
+	<h4>Shoulders</h4>
+	<h4><%= @workouts['shoulders'] %></h4>
+</div>
+<div class="workout back col-lg-4 .col-xs-6 .col-sm-4">
+	<h4>Back</h4>
+	<h4><%= @workouts['back'] %></h4>
+</div>
+<div class="workout legs col-lg-4 .col-xs-6 .col-sm-4">
+	<h4>Legs</h4>
+	<h4><%= @workouts['legs'] %></h4>
+</div>
+<div class="workout arms col-lg-4 .col-xs-6 .col-sm-4">
+	<h4>Arms</h4>
+	<h4><%= @workouts['arms'] %></h4>
+</div>
+</div>
+</div>
+
+<script type="text/javascript">
+	$('.workout').addClass('yolo')
+</script>
