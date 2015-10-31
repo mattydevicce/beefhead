@@ -14,6 +14,8 @@ gem 'bootstrap-sass', '~> 3.3.5'
 group :development, :test do
 	gem 'pry'
   gem 'byebug'
+  gem 'better_errors'
+  gem "binding_of_caller"
 end
 
 group :development do

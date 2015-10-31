@@ -14,7 +14,6 @@ class SchedulesController < ApplicationController
 
   # GET /schedules/new
   def new
-
     @schedule = Schedule.new
     @gyms = Gym.all
     @muscle_groups = MuscleGroup.all
