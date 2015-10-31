@@ -26,7 +26,7 @@
 		      			<% total += 1 %>
 	      			<% end %>
       			<% end %>
-      			<td class="gym-td"><%= total %> people</td></tr>
+      			<td class="gym-td"><%= link_to total, gym_schedule_path(value) %> people</td></tr>
 	      	<% end %>
       	<% end %>
 	    </tbody>
