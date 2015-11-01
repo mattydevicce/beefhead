@@ -1,3 +1,4 @@
+require 'pry'
 class SchedulesController < ApplicationController
   before_action :set_schedule, only: [:show, :edit, :update, :destroy]
 
@@ -26,14 +27,22 @@ class SchedulesController < ApplicationController
   # POST /schedules
   # POST /schedules.json
   def create
+    # binding.pry
     @schedule = Schedule.new(schedule_params)
-    @muscle = MuscleGroup.find(params[:schedule][:muscle_groups])
-    @schedule.muscle_groups << @muscle
     respond_to do |format|
-      if @schedule.save
+      if !params[:schedule][:muscle_groups].nil? && @schedule.save
+        # grab the muscle group param passed and store it in the join
+        # table
+        @muscle = MuscleGroup.find(params[:schedule][:muscle_groups])
+        @schedule.muscle_groups << @muscle
         format.html { redirect_to @schedule, notice: 'Schedule was successfully created.' }
         format.json { render :show, status: :created, location: @schedule }
       else
+        # Added custom error and had to pass the variables again
+        # so it wouldnt break
+        @schedule.errors.add(:muscle_group, "Choose one")
+        @muscle_groups = MuscleGroup.all
+        @gyms = Gym.all
         format.html { render :new }
         format.json { render json: @schedule.errors, status: :unprocessable_entity }
       end

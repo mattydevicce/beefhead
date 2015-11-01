@@ -5,17 +5,42 @@ class GymsController < ApplicationController
   def schedules
     @workouts = {'chest' => 0, 'shoulders' => 0, 'back' => 0, 'legs' => 0, 'arms' => 0}
     hour = params[:time].to_i - 5
-    min = 0
-    if params[:format] == 0.5
+    if params[:format] == '5'
       min = 30
+      display_min = "30"
+    else
+      min = 0
+      display_min = "00"
     end
-    time = Time.new(2000, 1, 1, hour, min, 0, +0)
+
+    @time = Time.new(2000, 1, 1, hour, min, 0, +0)
     @todays_muscle_groups = Schedule.where({date: DateTime.now, time: Time.new(2000, 01, 01, hour, min)})
-    @todays_muscle_groups.each do |schedule|
-      schedule.muscle_groups.each do |muscle|
-        @workouts[muscle.muscle] += 1
+    
+    # Need to grab previous half hours 
+    if min == 0
+      @today_previous_hour_muscle_groups = Schedule.where({date: DateTime.now, time: Time.new(2000, 01, 01, hour-1, 30)})
+    else
+      @today_previous_hour_muscle_groups = Schedule.where({date: DateTime.now, time: Time.new(2000, 01, 01, hour, 0)})
+    end
+    
+    if @today_previous_hour_muscle_groups
+      @today_previous_hour_muscle_groups.each do |schedule|
+        schedule.muscle_groups.each do |muscle|
+          @workouts[muscle.muscle] += 1
+        end
       end
     end
+
+    if @todays_muscle_groups
+      @todays_muscle_groups.each do |schedule|
+        schedule.muscle_groups.each do |muscle|
+          @workouts[muscle.muscle] += 1
+        end
+      end
+    end
+
+    @display_time = (hour + 5).to_s + ":" + display_min
+    @display_date = Time.now.strftime("%d/%m/%Y")
   end
 
 

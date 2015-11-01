@@ -8,12 +8,18 @@
 	    </thead>
 
 	    <tbody class="tbody-gyms">
+	    	<!-- Need to display time for the gym to be open.. which is 5-11 -->
 	      <% 5.step(22,0.5) do |value| %>
+	      	<!-- If the value is on the half step -->
 	      	<% if value%1 != 0 %>
 		      	<tr><td class="gym-td"><%= value.floor %>:30</td>
+		      	<!-- reset the total every iteration -->
 		      	<% total = 0 %>
+		      	<!-- Loop through each schedule and see if the value is equal to the schedule time or half hour before. Expected that each person working out will stay morethan half hour -->
 		      	<% @todays_schedule.each do |schedule| %>
-		      		<% if schedule.time.hour ==  value.floor && schedule.time.min == 30 %>
+		      		<% if schedule.time.hour == value.floor && schedule.time.min == 30 %>
+		      			<% total += 1 %>
+	      			<% elsif schedule.time.hour == (value-1) && schedule.time.min != 30 %>
 		      			<% total += 1 %>
 	      			<% end %>
       			<% end %>
@@ -22,7 +28,9 @@
 	      		<tr><td class="gym-td"><%= value.floor %></td>
 		      	<% total = 0 %>
 		      	<% @todays_schedule.each do |schedule| %>
-		      		<% if schedule.time.hour ==  value && schedule.time.min != 30 %>
+		      		<% if schedule.time.hour == value && schedule.time.min != 30 %>
+		      			<% total += 1 %>
+	      			<% elsif schedule.time.hour == (value-1) && schedule.time.min == 30 %>
 		      			<% total += 1 %>
 	      			<% end %>
       			<% end %>
