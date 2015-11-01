@@ -32,28 +32,47 @@
 <script type="text/javascript">
 	var greatest = 0;
 	var greatest_class = ''
-	var is_tied = [];
-	console.log("<%= @workouts['chest'] %>")
-	if ("<%= @workouts['chest'] %>" > greatest) {
-		greatest = "<%= @workouts['chest'] %>"
-		greatest_class = "chest"
+	var is_tied = []
+	var sortable = [['chest', "<%= @workouts['chest'] %>"], ['shoulders', "<%= @workouts['shoulders'] %>"],['back', "<%= @workouts['back'] %>"],['arms', "<%= @workouts['arms'] %>"],['legs', "<%= @workouts['legs'] %>"]];
+
+	console.log(sortable)
+	sortable.sort(function(a, b) {return b[1] - a[1]})
+
+	for (var i=0; i<sortable.length; i++){
+		console.log('loops')
+		if (sortable[i][1] == 0) {
+			console.log('uhhhh')
+		} else if (sortable[i][1] > greatest){
+			greatest = sortable[i][1];
+			is_tied.push(sortable[i][0]);
+		} else if (sortable[i][1] == greatest) {
+			is_tied.push(sortable[i][0]);
+		}
 	}
-	if ("<%= @workouts['shoulders'] %>" > greatest) {
-		greatest_class = "shoulders"
-		greatest = "<%= @workouts['shoulders'] %>"
+	// if ("<%= @workouts['chest'] %>" > greatest) {
+	// 	greatest = "<%= @workouts['chest'] %>"
+	// 	greatest_class = "chest"
+	// }
+	// if ("<%= @workouts['shoulders'] %>" > greatest) {
+	// 	greatest_class = "shoulders"
+	// 	greatest = "<%= @workouts['shoulders'] %>"
+	// }
+	// if ("<%= @workouts['back'] %>" > greatest) {
+	// 	greatest_class = "back"
+	// 	greatest = "<%= @workouts['back'] %>"
+	// }
+	// if ("<%= @workouts['legs'] %>" > greatest) {
+	// 	greatest_class = "legs"
+	// 	greatest = "<%= @workouts['legs'] %>"
+	// }
+	// if ("<%= @workouts['arms'] %>" > greatest) {
+	// 	greatest_class = "arms"
+	// 	greatest = "<%= @workouts['arms'] %>"
+	// }
+	console.log(is_tied)
+	console.log('about to loop')
+	for (var j=0; j<is_tied.length; j++){
+		console.log('oops')
+		$('.'+ is_tied[j]).addClass('yolo')
 	}
-	if ("<%= @workouts['back'] %>" > greatest) {
-		greatest_class = "back"
-		greatest = "<%= @workouts['back'] %>"
-	}
-	if ("<%= @workouts['legs'] %>" > greatest) {
-		greatest_class = "legs"
-		greatest = "<%= @workouts['legs'] %>"
-	}
-	if ("<%= @workouts['arms'] %>" > greatest) {
-		greatest_class = "arms"
-		greatest = "<%= @workouts['arms'] %>"
-	}
-	console.log(greatest_class)
-	$('.'+greatest_class).addClass('yolo')
 </script>
