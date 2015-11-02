@@ -16,6 +16,7 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url(https://fonts.googleapis.com/css?family=Itim);
 
 $color1: #193F8A ;
 $color2: #A7DBD8;
@@ -25,6 +26,7 @@ $color5: #FA6900;
 
 body {
 	background-color: $color3;
+	font-family: 'Itim', cursive;
 }
 
 h1 {

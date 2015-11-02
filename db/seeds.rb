@@ -12,3 +12,5 @@ MuscleGroup.create(muscle: 'shoulders')
 MuscleGroup.create(muscle: 'back')
 MuscleGroup.create(muscle: 'legs')
 MuscleGroup.create(muscle: 'arms')
+
+Schedule.create()
