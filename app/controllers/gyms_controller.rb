@@ -17,12 +17,13 @@ class GymsController < ApplicationController
     @todays_muscle_groups = Schedule.where({date: DateTime.now, time: Time.new(2000, 01, 01, hour, min)})
     
     # Need to grab previous half hours 
-    if min == 0
-      @today_previous_hour_muscle_groups = Schedule.where({date: DateTime.now, time: Time.new(2000, 01, 01, hour-1, 30)})
-    else
-      @today_previous_hour_muscle_groups = Schedule.where({date: DateTime.now, time: Time.new(2000, 01, 01, hour, 0)})
+    if hour > 0
+      if min == 0
+        @today_previous_hour_muscle_groups = Schedule.where({date: DateTime.now, time: Time.new(2000, 01, 01, hour-1, 30)})
+      else
+        @today_previous_hour_muscle_groups = Schedule.where({date: DateTime.now, time: Time.new(2000, 01, 01, hour, 0)})
+      end
     end
-    
     if @today_previous_hour_muscle_groups
       @today_previous_hour_muscle_groups.each do |schedule|
         schedule.muscle_groups.each do |muscle|

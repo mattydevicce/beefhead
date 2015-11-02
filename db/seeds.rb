@@ -7,10 +7,180 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 MuscleGroup.delete_all
-MuscleGroup.create(muscle: 'chest')
-MuscleGroup.create(muscle: 'shoulders')
-MuscleGroup.create(muscle: 'back')
-MuscleGroup.create(muscle: 'legs')
-MuscleGroup.create(muscle: 'arms')
+chest = MuscleGroup.create(muscle: 'chest')
+shoulders = MuscleGroup.create(muscle: 'shoulders')
+back = MuscleGroup.create(muscle: 'back')
+legs = MuscleGroup.create(muscle: 'legs')
+arms = MuscleGroup.create(muscle: 'arms')
 
-Schedule.create()
+muscle_groups = [chest, shoulders, back, legs, arms]
+Schedule.delete_all
+3.times do |i|
+	new_schedule = Schedule.create(gym_id: 1, time: '5:00', date: DateTime.now, user_id: 1)
+	new_schedule.muscle_groups << muscle_groups.sample
+end
+
+3.times do |i|
+	new_schedule = Schedule.create(gym_id: 1, time: '5:30', date: DateTime.now, user_id: 1)
+	new_schedule.muscle_groups << muscle_groups.sample
+end
+
+5.times do |i|
+	new_schedule = Schedule.create(gym_id: 1, time: '6:00', date: DateTime.now, user_id: 1)
+	new_schedule.muscle_groups << muscle_groups.sample
+end
+
+4.times do |i|
+	new_schedule = Schedule.create(gym_id: 1, time: '6:30', date: DateTime.now, user_id: 1)
+	new_schedule.muscle_groups << muscle_groups.sample
+end
+
+8.times do |i|
+	new_schedule = Schedule.create(gym_id: 1, time: '7:00', date: DateTime.now, user_id: 1)
+	new_schedule.muscle_groups << muscle_groups.sample
+end
+
+4.times do |i|
+	new_schedule = Schedule.create(gym_id: 1, time: '7:30', date: DateTime.now, user_id: 1)
+	new_schedule.muscle_groups << muscle_groups.sample
+end
+
+7.times do |i|
+	new_schedule = Schedule.create(gym_id: 1, time: '8:00', date: DateTime.now, user_id: 1)
+	new_schedule.muscle_groups << muscle_groups.sample
+end
+
+5.times do |i|
+	new_schedule = Schedule.create(gym_id: 1, time: '8:30', date: DateTime.now, user_id: 1)
+	new_schedule.muscle_groups << muscle_groups.sample
+end
+
+4.times do |i|
+	new_schedule = Schedule.create(gym_id: 1, time: '9:00', date: DateTime.now, user_id: 1)
+	new_schedule.muscle_groups << muscle_groups.sample
+end
+
+4.times do |i|
+	new_schedule = Schedule.create(gym_id: 1, time: '9:30', date: DateTime.now, user_id: 1)
+	new_schedule.muscle_groups << muscle_groups.sample
+end
+
+7.times do |i|
+	new_schedule = Schedule.create(gym_id: 1, time: '10:00', date: DateTime.now, user_id: 1)
+	new_schedule.muscle_groups << muscle_groups.sample
+end
+
+4.times do |i|
+	new_schedule = Schedule.create(gym_id: 1, time: '10:30', date: DateTime.now, user_id: 1)
+	new_schedule.muscle_groups << muscle_groups.sample
+end
+
+5.times do |i|
+	new_schedule = Schedule.create(gym_id: 1, time: '11:00', date: DateTime.now, user_id: 1)
+	new_schedule.muscle_groups << muscle_groups.sample
+end
+
+8.times do |i|
+	new_schedule = Schedule.create(gym_id: 1, time: '11:30', date: DateTime.now, user_id: 1)
+	new_schedule.muscle_groups << muscle_groups.sample
+end
+
+8.times do |i|
+	new_schedule = Schedule.create(gym_id: 1, time: '12:00', date: DateTime.now, user_id: 1)
+	new_schedule.muscle_groups << muscle_groups.sample
+end
+
+5.times do |i|
+	new_schedule = Schedule.create(gym_id: 1, time: '12:30', date: DateTime.now, user_id: 1)
+	new_schedule.muscle_groups << muscle_groups.sample
+end
+
+5.times do |i|
+	new_schedule = Schedule.create(gym_id: 1, time: '13:00', date: DateTime.now, user_id: 1)
+	new_schedule.muscle_groups << muscle_groups.sample
+end
+
+4.times do |i|
+	new_schedule = Schedule.create(gym_id: 1, time: '13:30', date: DateTime.now, user_id: 1)
+	new_schedule.muscle_groups << muscle_groups.sample
+end
+
+5.times do |i|
+	new_schedule = Schedule.create(gym_id: 1, time: '14:00', date: DateTime.now, user_id: 1)
+	new_schedule.muscle_groups << muscle_groups.sample
+end
+
+5.times do |i|
+	new_schedule = Schedule.create(gym_id: 1, time: '14:30', date: DateTime.now, user_id: 1)
+	new_schedule.muscle_groups << muscle_groups.sample
+end
+
+5.times do |i|
+	new_schedule = Schedule.create(gym_id: 1, time: '15:00', date: DateTime.now, user_id: 1)
+	new_schedule.muscle_groups << muscle_groups.sample
+end
+
+3.times do |i|
+	new_schedule = Schedule.create(gym_id: 1, time: '15:30', date: DateTime.now, user_id: 1)
+	new_schedule.muscle_groups << muscle_groups.sample
+end
+
+5.times do |i|
+	new_schedule = Schedule.create(gym_id: 1, time: '16:00', date: DateTime.now, user_id: 1)
+	new_schedule.muscle_groups << muscle_groups.sample
+end
+
+6.times do |i|
+	new_schedule = Schedule.create(gym_id: 1, time: '16:30', date: DateTime.now, user_id: 1)
+	new_schedule.muscle_groups << muscle_groups.sample
+end
+
+7.times do |i|
+	new_schedule = Schedule.create(gym_id: 1, time: '17:00', date: DateTime.now, user_id: 1)
+	new_schedule.muscle_groups << muscle_groups.sample
+end
+
+8.times do |i|
+	new_schedule = Schedule.create(gym_id: 1, time: '18:00', date: DateTime.now, user_id: 1)
+	new_schedule.muscle_groups << muscle_groups.sample
+end
+
+6.times do |i|
+	new_schedule = Schedule.create(gym_id: 1, time: '18:30', date: DateTime.now, user_id: 1)
+	new_schedule.muscle_groups << muscle_groups.sample
+end
+
+8.times do |i|
+	new_schedule = Schedule.create(gym_id: 1, time: '19:00', date: DateTime.now, user_id: 1)
+	new_schedule.muscle_groups << muscle_groups.sample
+end
+
+5.times do |i|
+	new_schedule = Schedule.create(gym_id: 1, time: '19:30', date: DateTime.now, user_id: 1)
+	new_schedule.muscle_groups << muscle_groups.sample
+end
+
+5.times do |i|
+	new_schedule = Schedule.create(gym_id: 1, time: '20:00', date: DateTime.now, user_id: 1)
+	new_schedule.muscle_groups << muscle_groups.sample
+end
+
+5.times do |i|
+	new_schedule = Schedule.create(gym_id: 1, time: '20:30', date: DateTime.now, user_id: 1)
+	new_schedule.muscle_groups << muscle_groups.sample
+end
+
+4.times do |i|
+	new_schedule = Schedule.create(gym_id: 1, time: '21:00', date: DateTime.now, user_id: 1)
+	new_schedule.muscle_groups << muscle_groups.sample
+end
+
+4.times do |i|
+	new_schedule = Schedule.create(gym_id: 1, time: '21:30', date: DateTime.now, user_id: 1)
+	new_schedule.muscle_groups << muscle_groups.sample
+end
+
+3.times do |i|
+	new_schedule = Schedule.create(gym_id: 1, time: '22:00', date: DateTime.now, user_id: 1)
+	new_schedule.muscle_groups << muscle_groups.sample
+end
