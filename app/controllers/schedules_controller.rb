@@ -1,4 +1,3 @@
-require 'pry'
 class SchedulesController < ApplicationController
   before_action :set_schedule, only: [:show, :edit, :update, :destroy]
 
@@ -27,7 +26,6 @@ class SchedulesController < ApplicationController
   # POST /schedules
   # POST /schedules.json
   def create
-    # binding.pry
     @schedule = Schedule.new(schedule_params)
     respond_to do |format|
       if !params[:schedule][:muscle_groups].nil? && @schedule.save

@@ -1,4 +1,3 @@
-require 'pry'
 class GymsController < ApplicationController
   before_action :set_gym, only: [:show, :edit, :update, :destroy]
 
