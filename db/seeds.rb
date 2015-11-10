@@ -5,6 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+password = (0...50).map { ('a'..'z').to_a[rand(26)] }.join
+Gym.create(name: 'NYSF', address: '8th and 24th')
+
+User.create(name: 'Matt', email: 'matt', password_digest: password, gym_id: 1)
+
 
 MuscleGroup.delete_all
 chest = MuscleGroup.create(muscle: 'chest')
