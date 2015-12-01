@@ -4,5 +4,4 @@ class User < ActiveRecord::Base
   has_many :schedules
   validates :email, uniqueness: true
   validates :name, :email, :password_confirmation, presence: true
-
 end
