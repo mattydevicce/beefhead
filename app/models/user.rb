@@ -4,5 +4,5 @@ class User < ActiveRecord::Base
   has_many :schedules
   validates :email, uniqueness: true
   validates :name, :email, :password_confirmation, presence: true
-  validates :password, length: { minimum: 6 }
+
 end
